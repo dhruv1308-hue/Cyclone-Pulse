@@ -13,7 +13,7 @@ runner = "https://webc.org/runner/wasi"
 
 [command.annotations.wasi]
 env = ["FALLBACK_FILE=index.html"]
-fs = { "/public" = "Cyclone Pulse/dist" }
+fs = { "/public" = "dist" }
 
 [[fs]]
-"/public" = "Cyclone Pulse/dist"
+"/public" = "dist"
