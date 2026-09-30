@@ -15,5 +15,9 @@ runner = "https://webc.org/runner/wasi"
 env = ["FALLBACK_FILE=index.html"]
 fs = { "/public" = "dist" }
 
+# Keeps the app instance persistently running and auto-restarts on failure
+[command.annotations.restart_policy]
+policy = "always"
+
 [[fs]]
 "/public" = "dist"
