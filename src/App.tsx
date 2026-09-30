@@ -11,7 +11,7 @@ import { MultilingualAlerts } from './components/MultilingualAlerts';
 import { DisasterCopilot } from './components/DisasterCopilot';
 import { SituationReportModal } from './components/SituationReportModal';
 import { LocationSearchModal } from './components/LocationSearchModal';
-import { CycloneWebGL } from './components/CycloneWebGL';
+import CycloneWebGL from './components/CycloneWebGL';
 import { BarChart3, Navigation, Radio, Bot, ShieldAlert, Circle } from 'lucide-react';
 
 export function App() {

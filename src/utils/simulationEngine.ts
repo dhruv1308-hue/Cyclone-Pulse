@@ -15,6 +15,17 @@ export interface EvaluatedSimulation {
   peakSurgeWaterLevelM: number;
 }
 
+/** Analyze wind patterns to predict cyclone development */
+export interface WindPatternAnalysis {
+  windShearKmh: number;
+  convergenceIndex: number;
+  vorticity: number;
+  seaSurfaceTempInfluence: number;
+  predictionHorizonHours: number;
+  predictedIntensityChange: 'weakening' | 'stable' | 'intensifying';
+  recommendedAction: 'monitor' | 'prepare' | 'urgent_prepare';
+}
+
 // Interpolate track point for smooth time-scrubbing
 export function interpolateTrackPoint(track: StormTrackPoint[], currentHour: number, categoryMultiplier: number, tideAddonMeters: number): StormTrackPoint {
   if (track.length === 0) {

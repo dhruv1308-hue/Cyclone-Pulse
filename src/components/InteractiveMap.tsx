@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import L from 'leaflet';
 import { CycloneScenario, SimulationState } from '../types/cyclone';
-import { EvaluatedSimulation, analyzeWindPatterns } from '../utils/simulationEngine';
 import { Layers, ShieldCheck } from 'lucide-react';
+import { EvaluatedSimulation, analyzeWindPatterns, WindPatternAnalysis } from '../utils/simulationEngine';
 
 interface InteractiveMapProps {
   scenario: CycloneScenario;

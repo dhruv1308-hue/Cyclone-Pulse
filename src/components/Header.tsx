@@ -5,7 +5,8 @@ import { Download, Radio, Waves, RefreshCw, Zap, MapPin, AlertCircle, TrendingUp
 
 interface HeaderProps {
   scenarios: CycloneScenario[];
-  onSelectScenario: (scenarioId: string) => void;
+  activeScenario: CycloneScenario;
+  onSelectScenario: (id: string) => void;
   evaluated: EvaluatedSimulation;
   onOpenSitrep: () => void;
   onOpenLocationSearch: () => void;
@@ -14,6 +15,8 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({
   scenarios,
+  activeScenario,
+  onSelectScenario,
   evaluated,
   onOpenSitrep,
   onOpenLocationSearch,
@@ -41,7 +44,6 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   // Get the selected scenario
-  const activeScenario = useMemo(() => scenarios.find(s => s.id === selectedScenarioId) || scenarios[0], [selectedScenarioId, scenarios]);
 
   return (
     <header className="bg-slate-900/90 backdrop-blur-md border-b border-slate-800 px-4 py-3 sticky top-0 z-50 flex flex-wrap items-center justify-between gap-4">
