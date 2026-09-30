@@ -1,0 +1,19 @@
+[package]
+name = "dhruv1308-hue/cyclone-pulse"
+version = "0.1.0"
+description = "Cyclone Pulse website"
+
+[dependencies]
+"wasmer/static-website" = "^0.1"
+
+[[command]]
+name = "script"
+module = "wasmer/static-website:static-website"
+runner = "https://webc.org/runner/wasi"
+
+[command.annotations.wasi]
+env = ["FALLBACK_FILE=index.html"]
+fs = { "/public" = "Cyclone Pulse/dist" }
+
+[[fs]]
+"/public" = "Cyclone Pulse/dist"
