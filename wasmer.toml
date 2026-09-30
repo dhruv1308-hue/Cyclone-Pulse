@@ -1,7 +1,7 @@
 [package]
 name = "dhruv1308-hue/cyclone-pulse"
 version = "0.1.0"
-description = "Cyclone Pulse website"
+description = "Cyclone Pulse static website"
 
 [dependencies]
 "wasmer/static-website" = "^0.1"
@@ -14,10 +14,6 @@ runner = "https://webc.org/runner/wasi"
 [command.annotations.wasi]
 env = ["FALLBACK_FILE=index.html"]
 fs = { "/public" = "dist" }
-
-# Keeps the app instance persistently running and auto-restarts on failure
-[command.annotations.restart_policy]
-policy = "always"
 
 [[fs]]
 "/public" = "dist"
